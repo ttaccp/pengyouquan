@@ -37,9 +37,9 @@ $('[name="comment"]').click(function(){
 		commentbox = $('#commentbox' + id);
 		
 	commentbox.append(['<div class="comment-line">',
-						'<span class="s">', userInfo.name,'：</span><input type="text" class="txt"/>',
+						'<span class="s">', userInfo.name,'：</span><div class="text" contenteditable="true"></div>',
 					'</div>'].join(''))
-	commentbox.find('input:last').focus();
+	commentbox.find('.text:last').focus();
 });
 
 // 预览图片
