@@ -1,0 +1,23 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: arial, "microsoft yahei";
+	color: #000;
+}
+html {
+	font-size: 100px;
+}
+body {
+	font-size: 0.14rem;
+}
+@media (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+	html {
+		font-size: 117.1875px;
+	}
+}
+@media (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+	html {
+		font-size: 129.375px;
+	}
+}
