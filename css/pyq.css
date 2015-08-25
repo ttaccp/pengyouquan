@@ -18,3 +18,7 @@ html, body{
 	bottom: 0;
 	width: 100%;
 }
+.step7 .clickTip{
+	top: 0.11rem;
+    right: 0.8rem;
+}

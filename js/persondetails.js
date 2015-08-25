@@ -7,7 +7,6 @@ function setPersonDetails(data){
 }
 
 $('#personBtn').click(function(){
-	console.log(selectedPersonCard);
 	$('#step4').hide();
 	$("#step5")
 		.fadeIn(1000)

@@ -4,6 +4,15 @@ html, body{
 }
 .step3{
 	color: #000;
+	height: 100%;
+}
+.step3 .clickTip{
+	bottom: 0.22rem;
+	left: 50%;
+}
+.step3 .clickTip.send{
+	left: initial;
+	right: 0.4rem;
 }
 .step3 .input2,
 .step3 .input{

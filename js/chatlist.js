@@ -1,4 +1,3 @@
-console.log(currentChatData);
 var chatlistTopDat = currentChatData[currentChatData.length - 1];
 $('#chatlistbox').prepend(['<div class="line">',
 								'<img src="', chatlistTopDat.head,'" class="head" />',
@@ -13,4 +12,7 @@ $('#step6_toolbar').click(function(){
 	$("#step7")
 		.fadeIn(1000)
 		.load('pyq.html');
+});
+$('#step6 .clickTip').click(function(){
+	$('#step6_toolbar').click();
 });

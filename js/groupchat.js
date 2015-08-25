@@ -1,11 +1,23 @@
 showchat('#chatlist .msgline:first-child');
 
+$('#step3 .clickTip').click(function(){
+	var self = $(this);
+	if(self.hasClass('send')){
+		$('#input2').click();
+	} else {
+		$('#input').click();
+	}
+});
+
 $('#input').click(function(){
 	$(this).hide();
 	$('#input2').fadeIn(500);
+	$('#step3 .clickTip').addClass('send');
 });
 
 $('#input2').click(function(){
+	
+	$('#step3 .clickTip').hide();
 	
 	$(this).hide();
 	$('#input')

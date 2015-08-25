@@ -18,7 +18,6 @@ $('#numlist .num').live('click', function(){
 	}
 	
 	if($('#numbox .num:last').hasClass('cur')){
-		console.log('next');
 		$('#step2').hide();
 		$("#step3")
 			.fadeIn(1000)
