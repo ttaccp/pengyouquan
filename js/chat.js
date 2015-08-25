@@ -153,5 +153,13 @@ function addchat2(){
 		
 		currentAddchatIndex++
 		showchat2('#chatlist2 .msgline:last-child', addchat2);
+	} else {
+		
+		setTimeout(function(){
+			$('#step5').hide();
+			$("#step6")
+				.fadeIn(1000)
+				.load('chatlist.html');
+		}, 2000);
 	}
 }
