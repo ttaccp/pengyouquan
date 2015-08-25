@@ -23,11 +23,13 @@ $('#input2').click(function(){
 });
 
 var selectedPersonCard = null;
+var selectedPersonIndex = null;
 $('#chatlist [name="card"]').live('click',function(){
 	var self = $(this),
 		id = self.attr('_index');
 		
 	selectedPersonCard = chatDataList[id];
+	selectedPersonIndex = id;
 	
 	$('#step3').hide();
 	$("#step4")
@@ -101,7 +103,7 @@ function addchat(){
 		var data = chatDataList[addchatIndex];
 		if(data.type == 'msg'){
 			$('#chatlist')
-				.append(['<div class="msgline">',
+				.append(['<div class="msgline ', (data.isMe ? "me":""),'">',
 					'<img src="', data.head,'" class="head" />',
 					'<div class="name">', data.name,'</div>',
 					'<div class="msgcontent">', data.content,'</div>',
