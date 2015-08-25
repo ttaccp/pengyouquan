@@ -1,3 +1,4 @@
+// ===============step1========================
 var Msg = (function(window, $){
 	
 	var count = 0;
@@ -33,7 +34,65 @@ hammertime.on("panstart panend", function (ev) {
 		startX = x;
 	} else {
 		if((x - startX) > 30){
-			console.log('next')
+			$('#step1').hide();
+			$('#step2').show();
 		}
 	}
 });
+//$('#step1').hide();
+//$('#step2').show();
+
+// ===============step2========================
+$('#numlist .num').live('click', function(){
+	var self = $(this),
+		val = self.attr('_val'),
+		num = $('#numbox [_val="' + val + '"]'),
+		topnumVal = num.attr('_val');
+	
+	if(num.length > 0){
+		var pre = num.prev();
+		if(pre.length > 0 && pre.hasClass('cur') && val == topnumVal){
+			num.addClass('cur')
+		} else if(pre.length == 0 && val == topnumVal){
+			num.addClass('cur')
+		} else {
+			clearNumSelected();
+		}
+	} else {
+		clearNumSelected();
+	}
+	
+	if($('#numbox .num:last').hasClass('cur')){
+		console.log('next');
+	}
+});
+
+function clearNumSelected(){
+	
+	$('#numbox .num').removeClass('cur');
+	var count = 0,
+		temp = ['-30px', '30px', '-30px', '30px'];
+		
+	animate();
+
+	function animate(){
+		
+		$('#numbox')
+		.stop()
+		.animate({
+			'margin-left': temp[count]
+		}, 80, function(){
+			if(temp.length > ++count){
+				animate();
+			}
+		});
+	}
+}
+
+
+
+
+
+
+
+
