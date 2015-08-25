@@ -4,7 +4,7 @@ $('#numlist .num').live('click', function(){
 		num = $('#numbox [_val="' + val + '"]'),
 		topnumVal = num.attr('_val');
 	
-	if(num.length > 0){
+	if(num.length > 0 && !num.hasClass('cur')){
 		var pre = num.prev();
 		if(pre.length > 0 && pre.hasClass('cur') && val == topnumVal){
 			num.addClass('cur')
