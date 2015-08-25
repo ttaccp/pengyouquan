@@ -65,6 +65,7 @@ html, body{
 	position: relative;
 	word-break: break-all;
 	word-wrap: break-word;
+	overflow: hidden;
 }
 .step3 .chatlist .msgline.me .msgcontent{
 	margin-right: 0;
@@ -92,6 +93,27 @@ html, body{
     transform: rotate(225deg);
     background-color: #a2ea62;
     border: 0 !important;
+}
+.step3 .chatlist .msgline .msgcontent .tl{
+	color: #7f7f7f;
+	padding: 0 0.05rem 0.05rem;
+	border-bottom: 1px dashed #dcdcdc;
+}
+.step3 .chatlist .msgline .msgcontent .c_head{
+	float: left;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 0.05rem;
+	margin-top: 0.05rem;
+}
+.step3 .chatlist .msgline .msgcontent .c_name{
+	margin-left: 0.6rem;
+	margin-top: 0.05rem;
+}
+.step3 .chatlist .msgline .msgcontent .c_nick{
+	margin-left: 0.6rem;
+	margin-top: 0.12rem;
+	color: #7f7f7f;
 }
 /*.tapTip{
 	position: absolute;
