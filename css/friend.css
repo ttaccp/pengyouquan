@@ -196,6 +196,10 @@ body{
     border: 0;
     outline: none;
     background-color: #f3f3f5;
+    width: 100%;
+}
+.msg-list .msg-line .comment-praise-box .comment-box .comment-line span.txt{
+	width: initial;
 }
 .tip-txt{
 	color: #666;

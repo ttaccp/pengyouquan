@@ -37,9 +37,15 @@ $('[name="comment"]').click(function(){
 		commentbox = $('#commentbox' + id);
 		
 	commentbox.append(['<div class="comment-line">',
-						'<span class="s">', userInfo.name,'：</span><div class="text" contenteditable="true"></div>',
+						'<span class="s">', userInfo.name,'：</span><input type="text" class="txt" />',
 					'</div>'].join(''))
-	commentbox.find('.text:last').focus();
+	commentbox.find('.txt:last').focus();
+});
+
+$('.comment-line input.txt').live('blur', function(){
+	var self = $(this),
+		val = self.val();
+	self.replaceWith('<span class="txt">' + val + '</span>');
 });
 
 // 预览图片
