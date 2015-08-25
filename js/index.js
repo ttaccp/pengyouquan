@@ -9,7 +9,7 @@ var Msg = (function(window, $){
 			$('#msglist .msg:last').addClass('show');
 			count++
 			
-			if(count < 3){
+			if(count < 2){
 				fn_addDom();
 			}
 		}, 800);

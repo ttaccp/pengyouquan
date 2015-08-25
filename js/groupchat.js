@@ -22,6 +22,19 @@ $('#input2').click(function(){
 	showchat('#chatlist .msgline:last-child', addchat);	
 });
 
+var selectedPersonCard = null;
+$('#chatlist [name="card"]').live('click',function(){
+	var self = $(this),
+		id = self.attr('_index');
+		
+	selectedPersonCard = chatDataList[id];
+	
+	$('#step3').hide();
+	$("#step4")
+		.fadeIn(1000)
+		.load('persondetails.html');
+});
+
 function showchat(id, callback){
 	setTimeout(function(){
 		$(id).addClass('show');
@@ -98,7 +111,7 @@ function addchat(){
 				.append(['<div class="msgline">',
 					'<img src="', data.head,'" class="head" />',
 					'<div class="name">', data.name,'</div>',
-					'<div class="msgcontent">',
+					'<div class="msgcontent" name="card" _index="', addchatIndex,'">',
 						'<div class="tl">名片</div>',
 						'<img src="', data.cardHead,'" class="c_head" />',
 						'<div class="c_name">', data.cardName,'</div>',
