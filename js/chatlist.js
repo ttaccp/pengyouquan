@@ -7,3 +7,10 @@ $('#chatlistbox').prepend(['<div class="line">',
 								'</div>',
 								'<div class="msg">', chatlistTopDat.content,'</div>',
 							'</div>'].join(''));
+
+$('#step6_toolbar').click(function(){
+	$('#step6').hide();
+	$("#step7")
+		.fadeIn(1000)
+		.load('pyq.html');
+});
