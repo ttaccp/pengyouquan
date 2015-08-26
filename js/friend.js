@@ -56,7 +56,7 @@ $('.img-list .img').click(function(){
 		imglist = [];
 	
 	img.each(function(){
-		imglist.push($(this).attr('src'));
+		imglist.push($(this).attr('_src'));
 	});
 	
 	wx.previewImage({
