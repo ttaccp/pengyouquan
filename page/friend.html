@@ -404,7 +404,10 @@
 	            title: 'title', //分享标题
 	            desc: 'desc',
 	            link: location.href,
-	            imgUrl: 'imgurl'
+	            imgUrl: 'imgurl',
+	            success: function(){
+	            	location.href = 'deloitte.careerfrog.com.cn';
+	            }
 	        };
 	        
 	        wx.onMenuShareAppMessage(shareData);
