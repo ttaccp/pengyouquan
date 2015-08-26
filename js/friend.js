@@ -107,6 +107,7 @@ var MyVideo = (function(){
 				fn_init();
 			}
 			$('#videobox').show();
+			QrCode.hide()
 		},
 		hide: function(){
 			$('#videobox').hide();
