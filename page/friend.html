@@ -333,8 +333,10 @@
 			<div class="name">HR姐姐</div>
 			<div class="content">德勤831空中宣讲，在线与精英面对面的机会！抓紧在下面的评论中留下你的问题，你的问题将有机会在831宣讲会现场被回复！同学们，831等你相约！</div>
 			<div class="img-list one">
-				<img src="../img/pic18.png" class="img" />
-				<img src="../img/pic19.png" class="img" />
+				<img src="../img/pic27.png" class="img" />
+				<img src="../img/pic28.png" class="img" />
+				<img src="../img/pic29.png" class="img" />
+				<img src="../img/pic30.png" class="img" />
 			</div>
 			<div class="time-box">
 				<span class="time">30分钟前</span>
@@ -371,7 +373,7 @@
 	</div>
 	
 	<div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
-	<input type="button" value="点击分享并预约" class="share-btn" />
+	<input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();" />
 	
 	<div class="qrcode" id="qrcode">
 		<img src="../img/qrcode.jpg" class="img" />
@@ -385,7 +387,9 @@
 	    </video>
 	</div>
 	
-	
+	<div class="sharebox" id="sharebox">
+		<img src="../img/share.png" class="img" />
+	</div>
 	
 	<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
@@ -423,8 +427,8 @@
 	    function setShareInfo(){
 	    	
 	    	var shareData = {
-	            title: 'title', //分享标题
-	            desc: 'desc',
+	            title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
+	            desc: '德勤内部闹翻天啦~还不快来看看！',
 	            link: location.href,
 	            imgUrl: 'imgurl',
 	            success: function(){

@@ -118,4 +118,27 @@ var MyVideo = (function(){
 	return self;
 })();
 
-
+var Share = (function(){
+	
+	function fn_init(){
+		$('#sharebox').click(function(){
+			self.hide();
+		});
+	}
+	
+	var _init = false; 
+	var self = {
+		show: function(){
+			if(!_init){
+				_init = true;
+				fn_init();
+			}
+			$('#sharebox').show()
+		},
+		hide: function(){
+			$('#sharebox').hide()
+		}
+	}
+	
+	return self;
+})();
