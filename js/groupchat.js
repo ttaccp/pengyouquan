@@ -50,7 +50,11 @@ $('#chatlist [name="card"]').live('click',function(){
 });
 
 function showchat(id, callback){
+	
 	setTimeout(function(){
+		var send_music = new Audio();
+		send_music.src = '../audio/send.mp3';
+		send_music.play();
 		$(id).addClass('show');
 		if(callback){
 			setTimeout(callback, 500);
