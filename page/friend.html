@@ -289,8 +289,8 @@
 			<img src="../img/head8.png" class="head" />
 			<div class="name">剪辑师</div>
 			<div class="content">德勤现场拍摄花絮~~原来德勤大咖都这么嗨！点击快来看看！</div>
-			<div class="img-list one">
-				<img src="../img/pic20.png" class="img" />
+			<div class="img-list">
+				<img src="../img/pic20.png" class="img1" onclick="QrCode.show()" />
 			</div>
 			<div class="time-box">
 				<span class="time">30分钟前</span>
@@ -354,6 +354,20 @@
 	
 	<div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
 	<input type="button" value="点击分享并预约" class="share-btn" />
+	
+	<div class="qrcode" id="qrcode">
+		<img src="../img/qrcode.jpg" class="img" />
+	</div>
+	
+	<div class="videobox" id="videobox">
+		<div class="bg"></div>
+		<video class="video" id="videoDom" width="320" height="214" controls="" preload="none" poster="../img/pic20.png">
+	        <source src="../audio/video.mp4" type="video/mp4">
+	        <source src="../audio/video.ogv" type="video/ogg">
+	    </video>
+	</div>
+	
+	
 	
 	<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>

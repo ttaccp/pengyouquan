@@ -66,7 +66,55 @@ $('.img-list .img').click(function(){
 
 });
 
+var QrCode = (function(){
+	
+	function fn_init(){
+		$('#qrcode').click(function(){
+			self.hide();
+		});
+	}
+	
+	var _init = false; 
+	var self = {
+		show: function(){
+			if(!_init){
+				_init = true;
+				fn_init();
+			}
+			$('#qrcode').show()
+		},
+		hide: function(){
+			$('#qrcode').hide()
+		}
+	}
+	
+	return self;
+})();
 
-
+var MyVideo = (function(){
+	
+	function fn_init(){
+		$('#videobox .bg').click(function(){
+			self.hide();
+		});
+	}
+	
+	var _init = false; 
+	var self = {
+		show: function(){
+			if(!_init){
+				_init = true;
+				fn_init();
+			}
+			$('#videobox').show();
+		},
+		hide: function(){
+			$('#videobox').hide();
+			$('#videoDom')[0].pause();
+		}
+	}
+	
+	return self;
+})();
 
 
