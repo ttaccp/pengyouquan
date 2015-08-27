@@ -374,12 +374,23 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 
     <div class="name">剪辑师</div>
     <div class="content">德勤现场拍摄花絮~~原来德勤大咖都这么嗨！点击快来看看！</div>
-    <div class="img-list">
+    <div class="img-list" style="position: relative;">
       <?php if (!$status) : ?>
         <img src="../img/pic20.png" class="img1" onclick="QrCode.show();"/>
+        <div class="clickTip clickTip3" id="clickTip2">
+		  <div class="effect1"></div>
+		  <div class="effect2"></div>
+		  <div class="effect3"></div>
+		</div>
       <?php else: ?>
         <img src="../img/pic20.png" class="img1" onclick="MyVideo.show();"/>
+        <div class="clickTip clickTip3" id="clickTip3">
+		  <div class="effect1"></div>
+		  <div class="effect2"></div>
+		  <div class="effect3"></div>
+		</div>
       <?php endif; ?>
+      	
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>

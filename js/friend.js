@@ -36,7 +36,12 @@ $('#clickTip').click(function(){
 $('#clickTip1').click(function(){
 	$('#clickTipBtn1').click();
 });
-
+$('#clickTip2').click(function(){
+	QrCode.show();
+});
+$('#clickTip3').click(function(){
+	MyVideo.show();
+});
 // 评论
 $('[name="comment"]').click(function () {
   var self = $(this),

@@ -294,3 +294,9 @@ body{
     top: 0;
     z-index: 20;
 }
+.clickTip3{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -7px 0 0 -29px;
+}
