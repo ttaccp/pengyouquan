@@ -1,7 +1,24 @@
 <?php
+/**
+ * Author: liasica
+ * CreateTime: 15/8/27 上午8:21
+ * Filename: friend.php
+ * PhpStorm: pengyouquan
+ */
 require_once "jssdk/jssdk.php";
+require_once "helper/WechatHelper.php";
+include 'helper/phpqrcode.php';
 $jssdk       = new JSSDK("wxb6b25160f0aacad7", "6fff7fda51bea8c8d1bbf0c89b805f17");
 $signPackage = $jssdk->GetSignPackage();
+$wechat      = new WechatHelper();
+$code        = $_GET['code'];
+$userInfo    = $wechat->getInfo($code);
+if ($userInfo->openid == null)
+{
+  header('Location: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Fdebug&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect');
+  exit('链接失效，请重新打开链接（请勿刷新此页）！');
+}
+$status = $wechat->getStatusByOpenid($userInfo->openid);
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,6 +32,10 @@ $signPackage = $jssdk->GetSignPackage();
   <meta content="telephone=no" name="format-detection"/>
   <link rel="stylesheet" type="text/css" href="../css/base.css"/>
   <link rel="stylesheet" type="text/css" href="../css/friend.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/liasica.css"/>
+  <script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/friend.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
@@ -23,31 +44,33 @@ $signPackage = $jssdk->GetSignPackage();
     <img src="../img/headbg.png" class="img"/>
   </div>
   <div class="user-info">
-    <img src="../img/head.png" class="head"/>
+    <img src="<?php echo $userInfo->headimgurl; ?>" class="head"/>
 
-    <div class="name">I Love Deloitte</div>
+    <div class="name"><?php echo $userInfo->nickname; ?></div>
   </div>
 </div>
 
 <div class="msg-list">
   <div class="msg-line">
-    <img src="../img/head1.png" class="head"/>
+    <a href="persondetails2.html?index=5">
+      <img src="../img/head1.png" class="head"/>
+    </a>
 
     <div class="name">梁捷</div>
     <div class="content">今年校园招聘又有新招，一早匆匆赶去拍摄，某个段子说了7遍也是醉了！结束后赶去和我连轴转的老师练舞，再冲回家电话会议，这是周五吗？！
       默默想到自己说的话：因为有热情，才会发自内心滴去投入，用严格的自律，把一天分割成小块，一个个完成。好吧，现在的任务，赶紧睡觉。。。。。。
     </div>
     <div class="img-list">
-      <img src="../img/pic1.png" class="img"/>
-      <img src="../img/pic2.png" class="img"/>
-      <img src="../img/pic3.png" class="img"/>
-      <img src="../img/pic4.png" class="img"/>
-      <img src="../img/pic5.png" class="img"/>
-      <img src="../img/pic6.png" class="img"/>
+      <img src="../img/pic1.png" class="img" _src="../img/max_pic1.jpg"/>
+      <img src="../img/pic2.png" class="img" _src="../img/max_pic2.jpg"/>
+      <img src="../img/pic3.png" class="img" _src="../img/max_pic3.jpg"/>
+      <img src="../img/pic4.png" class="img" _src="../img/max_pic4.jpg"/>
+      <img src="../img/pic5.png" class="img" _src="../img/max_pic5.jpg"/>
+      <img src="../img/pic6.png" class="img" _src="../img/max_pic6.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">1分钟前</span>
-      <i class="more-btn" name="moreBtn"></i>
+      <i class="more-btn" name="moreBtn" id="clickTipBtn"></i>
 
       <div class="menu-box">
         <div class="menu">
@@ -76,14 +99,16 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head2.png" class="head"/>
+    <a href="persondetails2.html?index=6">
+      <img src="../img/head2.png" class="head"/>
+    </a>
 
     <div class="name">潘青</div>
     <div class="content">今天招聘时，有个小朋友问我，我们公司是不是特别喜欢招金牛座，因为金牛座会理财。如果要按星座选人，还不如选双子座和双鱼座，还可以省下一份钱
       ，德勤选人，只会按能力来，只要有能力，就能一展所长。
     </div>
     <div class="img-list one">
-      <img src="../img/pic7.png" class="img"/>
+      <img src="../img/pic7.png" class="img" _src="../img/max_pic7.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">4分钟前</span>
@@ -113,13 +138,15 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head3.png" class="head"/>
+    <a href="persondetails2.html?index=2">
+      <img src="../img/head3.png" class="head"/>
+    </a>
 
     <div class="name">Pascal</div>
     <div class="content">今天录制招聘宣传的video，HR让我讲讲如何发挥自己。我觉得，在德勤，能力的边界就是职责的边界，这就是最好的发挥。</div>
     <div class="img-list one">
-      <img src="../img/pic8.png" class="img"/>
-      <img src="../img/pic9.png" class="img"/>
+      <img src="../img/pic8.png" class="img" _src="../img/max_pic8.jpg"/>
+      <img src="../img/pic9.png" class="img" _src="../img/max_pic9.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">20分钟前</span>
@@ -154,12 +181,14 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head4.png" class="head"/>
+    <a href="persondetails2.html?index=1">
+      <img src="../img/head4.png" class="head"/>
+    </a>
 
     <div class="name">MC</div>
     <div class="content">晚上10点才录制结束，伤不起 但是，状态很好，拍得很棒，很欣慰，期待效果。</div>
     <div class="img-list one">
-      <img src="../img/pic10.png" class="img"/>
+      <img src="../img/pic10.png" class="img" _src="../img/max_pic10.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">25分钟前</span>
@@ -194,19 +223,21 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head5.png" class="head"/>
+    <a href="persondetails2.html?index=0">
+      <img src="../img/head5.png" class="head"/>
+    </a>
 
     <div class="name">HR姐姐</div>
     <div class="content">持续三天的录制终于收工，撒花庆祝 梁老师女王范儿，潘老师稳重范儿，Pascal酷劲十足，Terrence耍帅依旧，Jaimie美美哒，MC小黑呦
       ，我们大家都很敬业哟，希望8月31号在线宣讲大成功！！！
     </div>
     <div class="img-list">
-      <img src="../img/pic11.png" class="img"/>
-      <img src="../img/pic12.png" class="img"/>
-      <img src="../img/pic13.png" class="img"/>
-      <img src="../img/pic14.png" class="img"/>
-      <img src="../img/pic15.png" class="img"/>
-      <img src="../img/pic16.png" class="img"/>
+      <img src="../img/pic11.png" class="img" _src="../img/max_pic11.jpg"/>
+      <img src="../img/pic12.png" class="img" _src="../img/max_pic12.jpg"/>
+      <img src="../img/pic13.png" class="img" _src="../img/max_pic13.jpg"/>
+      <img src="../img/pic14.png" class="img" _src="../img/max_pic14.jpg"/>
+      <img src="../img/pic15.png" class="img" _src="../img/max_pic15.jpg"/>
+      <img src="../img/pic16.png" class="img" _src="../img/max_pic16.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>
@@ -244,12 +275,14 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head6.png" class="head"/>
+    <a href="persondetails2.html?index=7">
+      <img src="../img/head6.png" class="head"/>
+    </a>
 
     <div class="name">Terrence</div>
     <div class="content">午夜12点，飞机落地，这次上海之行又是一段有意义的旅程。</div>
     <div class="img-list one">
-      <img src="../img/pic17.png" class="img"/>
+      <img src="../img/pic17.png" class="img" _src="../img/max_pic17.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>
@@ -279,13 +312,15 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head7.png" class="head"/>
+    <a href="persondetails2.html?index=3">
+      <img src="../img/head7.png" class="head"/>
+    </a>
 
     <div class="name">Zizi</div>
     <div class="content">德勤现场拍摄花絮~~原来德勤大咖都这么嗨！点击快来看看！</div>
     <div class="img-list one">
-      <img src="../img/pic18.png" class="img"/>
-      <img src="../img/pic19.png" class="img"/>
+      <img src="../img/pic18.png" class="img" _src="../img/max_pic18.jpg"/>
+      <img src="../img/pic19.png" class="img" _src="../img/max_pic19.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>
@@ -318,12 +353,18 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head8.png" class="head"/>
+    <a href="persondetails2.html?index=4">
+      <img src="../img/head8.png" class="head"/>
+    </a>
 
     <div class="name">剪辑师</div>
     <div class="content">德勤现场拍摄花絮~~原来德勤大咖都这么嗨！点击快来看看！</div>
     <div class="img-list">
-      <img src="../img/pic20.png" class="img1" onclick="QrCode.show()"/>
+      <?php if (!$status) : ?>
+        <img src="../img/pic20.png" class="img1" onclick="QrCode.show();"/>
+      <?php else: ?>
+        <img src="../img/pic20.png" class="img1" onclick="MyVideo.show();"/>
+      <?php endif; ?>
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>
@@ -347,14 +388,18 @@ $signPackage = $jssdk->GetSignPackage();
   </div>
 
   <div class="msg-line">
-    <img src="../img/head5.png" class="head"/>
+    <a href="persondetails2.html?index=0">
+      <img src="../img/head5.png" class="head"/>
+    </a>
 
     <div class="name">HR姐姐</div>
     <div class="content">德勤831空中宣讲，在线与精英面对面的机会！抓紧在下面的评论中留下你的问题，你的问题将有机会在831宣讲会现场被回复！同学们，831等你相约！
     </div>
     <div class="img-list one">
-      <img src="../img/pic18.png" class="img"/>
-      <img src="../img/pic19.png" class="img"/>
+      <img src="../img/pic27.png" class="img" _src="../img/max_pic27.jpg"/>
+      <img src="../img/pic28.png" class="img" _src="../img/max_pic28.jpg"/>
+      <img src="../img/pic29.png" class="img" _src="../img/max_pic29.jpg"/>
+      <img src="../img/pic30.png" class="img" _src="../img/max_pic30.jpg"/>
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>
@@ -373,7 +418,7 @@ $signPackage = $jssdk->GetSignPackage();
         <div class="comment-line">
           <span class="s">Rackea：</span>德勤的五大雇主形象关键点是什么？
         </div>
-        <div class="comment-line">
+        <!--<div class="comment-line">
           <span class="s">Summer：</span>德勤的五大部门对人才的需求不同点在哪里？
         </div>
         <div class="comment-line">
@@ -381,10 +426,10 @@ $signPackage = $jssdk->GetSignPackage();
         </div>
         <div class="comment-line">
           <span class="s">Kitty：</span>德勤的员工都是怎么平衡生活与工作的？
-        </div>
-        <div class="comment-line">
+        </div>-->
+        <!--<div class="comment-line">
           <span class="s">HR姐姐：</span>你的问题HR姐姐已经收到啦！想知道你的问题会不会在现场被回复？让我们一起锁定831空中宣讲！
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
@@ -392,10 +437,50 @@ $signPackage = $jssdk->GetSignPackage();
 </div>
 
 <div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
-<input type="button" value="点击分享并预约" class="share-btn"/>
+<input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
 
 <div class="qrcode" id="qrcode">
-  <img src="../img/qrcode.jpg" class="img"/>
+  <!--<img src="../img/qrcode.jpg" class="img"/>-->
+  <?php
+  $png          = 'qrcode/' . $userInfo->openid . '.png';
+  $_url         = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
+  $_urlArr      = explode('/', $_url);
+  $_urlArr      = explode($_urlArr[count($_urlArr) - 1], $_url);
+  $value        = $_urlArr[0] . 'wechat/sortUrl.php?auth=' . $userInfo->openid;
+  $level        = QR_ECLEVEL_H;
+  $size         = 220;
+  $margin       = 0;
+  $saveandprint = false;
+  //生成二维码图片
+  QRcode::png($value, $png, $level, $size, $margin, $saveandprint);
+  ?>
+  <div class="content">
+    <img src="<?php echo $png; ?>" class="img">
+    <span class="qr-text">赶快邀请你身边的小伙伴扫描二维码，<br>精彩内幕等你！</span>
+  </div>
+  <?php if (!$status): ?>
+    <script type="text/javascript">
+      // 长轮询
+      function longpolling() {
+        $.ajax({
+          type: 'GET',
+          url: 'wechat/index.php?openid=<?php echo $userInfo->openid; ?>',
+          dataType: 'json',
+          success: function (data) {
+            console.log(data);
+            if (data.state == true) {
+              // 他人扫描成功
+              MyVideo.show();
+              return false;
+            }
+
+            longpolling();
+          }
+        });
+      }
+      longpolling();
+    </script>
+  <?php endif; ?>
 </div>
 
 <div class="videobox" id="videobox">
@@ -406,13 +491,20 @@ $signPackage = $jssdk->GetSignPackage();
   </video>
 </div>
 
+<div class="sharebox" id="sharebox">
+  <img src="../img/share.png" class="img"/>
+</div>
 
-<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/friend.js" type="text/javascript" charset="utf-8"></script>
+<div class="clickTip" id="clickTip">
+  <div class="effect1"></div>
+  <div class="effect2"></div>
+  <div class="effect3"></div>
+</div>
+
+
 <script type="text/javascript">
   var userInfo = {
-    name: 'I Love Deloitte'
+    name: '<?php echo $userInfo->nickname; ?>'
   }
 </script>
 
@@ -443,8 +535,8 @@ $signPackage = $jssdk->GetSignPackage();
   function setShareInfo() {
 
     var shareData = {
-      title: 'title', //分享标题
-      desc: 'desc',
+      title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
+      desc: '德勤内部闹翻天啦~还不快来看看！',
       link: location.href,
       imgUrl: 'imgurl',
       success: function () {

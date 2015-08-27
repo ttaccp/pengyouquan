@@ -1,0 +1,30 @@
+#qrcode {
+  background: rgba(0, 0, 0, 0.9); }
+
+#qrcode .content {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  height: 284px;
+  margin-top: -142px; }
+  #qrcode .content .img {
+    position: static;
+    margin: 0 auto; }
+  #qrcode .content .qr-text {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.51); }
+
+.videobox {
+  text-align: center; }
+  .videobox .video {
+    left: 50%;
+    margin-left: -160px; }
+  .videobox .bg {
+    background-color: rgba(0, 0, 0, 0.9); }
+
+/*# sourceMappingURL=liasica.css.map */
