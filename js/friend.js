@@ -26,7 +26,7 @@ $('[name="praise"]').click(function () {
     praisebox.append(' ， ' + userInfo.name);
     self.text('取消');
   }
-
+	self.parent().removeClass('show');
 });
 
 $('#clickTip').click(function(){
@@ -46,6 +46,7 @@ $('[name="comment"]').click(function () {
     '<span class="s">', userInfo.name, '：</span><input type="text" class="txt" _id="', id, '" />',
     '</div>'].join(''))
   commentbox.find('.txt:last').focus();
+  self.parent().removeClass('show');
 });
 
 $('.comment-line input.txt').live('blur', function () {
