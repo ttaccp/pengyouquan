@@ -14,7 +14,7 @@ $('#step6_toolbar').click(function () {
     .load('pyq.html', function () {
       var __openid = $('body').attr('data-openid');
       var __href = $('.gotoFriendTimeLine').attr('href');
-      $('.gotoFriendTimeLine').attr('href', __href + __openid);
+      $('.gotoFriendTimeLine').attr('href', __href + '?openid=' + __openid);
     });
 });
 $('#step6 .clickTip').click(function () {
