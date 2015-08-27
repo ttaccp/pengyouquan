@@ -17,6 +17,8 @@ if (isset($_GET['code']))
   $code     = $_GET['code'];
   $userInfo = $wechat->getInfo($code);
 }
+//var_dump($_GET['openid']);
+//exit();
 if (isset($_GET['openid']))
 {
   $openid   = $_GET['openid'];
