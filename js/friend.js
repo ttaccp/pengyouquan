@@ -1,3 +1,4 @@
+$('body').show();
 // 更多按钮
 $('[name="moreBtn"]').click(function () {
 

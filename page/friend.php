@@ -529,6 +529,8 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   <div class="effect3"></div>
 </div>
 
+<!-- 微信分享相关 -->
+<script type="text/javascript" charset="utf-8" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="../js/friend.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   var userInfo = {
@@ -536,8 +538,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   }
 </script>
 
-<!-- 微信分享相关 -->
-<script type="text/javascript" charset="utf-8" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
 <script type="text/javascript">
 
   wx.config({
