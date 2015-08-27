@@ -364,7 +364,11 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
     <div class="name">剪辑师</div>
     <div class="content">德勤现场拍摄花絮~~原来德勤大咖都这么嗨！点击快来看看！</div>
     <div class="img-list">
-      <img src="../img/pic20.png" class="img1" onclick="QrCode.show()"/>
+      <?php if (!$status) : ?>
+        <img src="../img/pic20.png" class="img1" onclick="QrCode.show();"/>
+      <?php else: ?>
+        <img src="../img/pic20.png" class="img1" onclick="MyVideo.show();"/>
+      <?php endif; ?>
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>
@@ -418,6 +422,18 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
         <div class="comment-line">
           <span class="s">Rackea：</span>德勤的五大雇主形象关键点是什么？
         </div>
+        <!--<div class="comment-line">
+          <span class="s">Summer：</span>德勤的五大部门对人才的需求不同点在哪里？
+        </div>
+        <div class="comment-line">
+          <span class="s">Cissie：</span>德勤对于新人的内部培训是什么样的？
+        </div>
+        <div class="comment-line">
+          <span class="s">Kitty：</span>德勤的员工都是怎么平衡生活与工作的？
+        </div>-->
+        <!--<div class="comment-line">
+          <span class="s">HR姐姐：</span>你的问题HR姐姐已经收到啦！想知道你的问题会不会在现场被回复？让我们一起锁定831空中宣讲！
+        </div>-->
       </div>
     </div>
   </div>
@@ -425,14 +441,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 </div>
 
 <div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
-
-<div>
-  <?php if(!$status): var_dump($status); exit(); ?>
-    <input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
-  <?php else: ?>
-    <input type="button" value="点击分享并预约" class="share-btn" onclick="MyVideo.show();"/>
-  <?php endif; ?>
-</div>
+<input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
 
 <div class="qrcode" id="qrcode">
   <!--<img src="../img/qrcode.jpg" class="img"/>-->
