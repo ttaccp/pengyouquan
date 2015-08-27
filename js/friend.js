@@ -74,7 +74,7 @@ $('.img-list .img').click(function () {
 
 console.log(imglist)
   wx.previewImage({
-    current: src, // 当前显示图片的http链接
+    current: 'http://third.liasica.com/pengyouquan/' + src.substr(3), // 当前显示图片的http链接
     urls: imglist // 需要预览的图片http链接列表
   });
 
