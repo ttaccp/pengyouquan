@@ -30,6 +30,10 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta content="telephone=no" name="format-detection"/>
+  
+  <link rel="prefetch" href="../audio/lock.mp3" />
+  <link rel="prefetch" href="../audio/send.mp3" />
+  
   <link rel="stylesheet" type="text/css" href="../css/base.css"/>
   <link rel="stylesheet" type="text/css" href="../css/friend.css"/>
   <link rel="stylesheet" type="text/css" href="../css/liasica.css"/>
