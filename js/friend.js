@@ -56,7 +56,7 @@ $('.comment-line input.txt').live('blur', function () {
   self.replaceWith('<span class="txt">' + val + '</span>');
   if (id == '9') {
     $('#commentbox' + id).append(['<div class="comment-line">',
-      '<span class="s">HR姐姐：</span>你的问题HR姐姐已经收到啦！想知道你的问题会不会在现场被回复？让我们一起锁定831空中宣讲！',
+      '<span class="s">HR姐姐回复', userInfo.name,'：</span>你的问题HR姐姐已经收到啦！想知道你的问题会不会在现场被回复？让我们一起锁定831空中宣讲！',
       '</div>'].join(''));
   }
 });
