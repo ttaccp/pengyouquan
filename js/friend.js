@@ -69,7 +69,7 @@ $('.img-list .img').click(function () {
     imglist = [];
 
   img.each(function () {
-    imglist.push(location.host + '/pengyouquan/' + $(this).attr('_src').substr(3));
+    imglist.push('http://third.liasica.com/pengyouquan/' + $(this).attr('_src').substr(3));
   });
 
 console.log(imglist)
