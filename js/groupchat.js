@@ -109,7 +109,7 @@ chatDataList.push({
 	head: '../img/head10.png',
 	name: 'c同学',
 	cardHead: '../img/head2.png',
-	cardName: '潘清',
+	cardName: '潘青',
 	cardNickName: '德勤审计合伙人'
 });
 var addchatIndex = 0;
