@@ -461,6 +461,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   </div>
   <?php if (!$status): ?>
     <script type="text/javascript">
+      alert('<?php echo $status; ?>');
       // 长轮询
       function longpolling() {
         $.ajax({
