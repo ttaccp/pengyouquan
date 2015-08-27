@@ -11,7 +11,7 @@ $wechat   = new WechatHelper();
 $code     = $_GET['code'];
 $userInfo = $wechat->getInfo($code);
 !is_dir($dir) && @mkdir($dir);
-file_put_contents($dir . $userInfo->openid, json_encode($userInfo));
+file_put_contents($dir . $userInfo->openid . '.json', json_encode($userInfo));
 $from_openid = $_GET['from_openid'];
 $to_openid   = $userInfo->openid;
 if ($to_openid != null)
