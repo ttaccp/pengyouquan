@@ -48,7 +48,7 @@ $('#chatlist [name="card"]').live('click',function(){
 	selectedPersonIndex = id;
 
   var teacher = selectedPersonCard.cardName;
-  var url = 'third.liasica.com/pengyouquan/page/wechat/tj.php?name=' + teacher;
+  var url = 'http://third.liasica.com/pengyouquan/page/wechat/tj.php?name=' + teacher;
   $.getJSON(url, function (res) {
     console.log(res);
   });
