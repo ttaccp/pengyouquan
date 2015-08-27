@@ -27,7 +27,7 @@ $userInfo = json_decode($userInfo);
   <link rel="prefetch" href="../audio/lock.mp3"/>
   <link rel="prefetch" href="../audio/send.mp3"/>
 </head>
-<body data-image="<?php echo $userInfo->headimgurl ?>" data-nickname="<?php echo $userInfo->nickname ?>">
+<body data-image="<?php echo $userInfo->headimgurl ?>" data-nickname="<?php echo $userInfo->nickname ?>" data-openid="<?php echo $userInfo->openid; ?>">
 
 <div id="step1" class="step1">
   <div class="time">08 : 31</div>
