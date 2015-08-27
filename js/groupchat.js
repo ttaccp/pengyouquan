@@ -37,17 +37,33 @@ $('#input2').click(function(){
 var selectedPersonCard = null;
 var selectedPersonIndex = null;
 $('#chatlist [name="card"]').live('click',function(){
+
+  // 记录
+
+
 	var self = $(this),
 		id = self.attr('_index');
 
 	selectedPersonCard = chatDataList[id];
 	selectedPersonIndex = id;
 
+  var teacher = selectedPersonCard.cardName;
+  var url = 'third.liasica.com/pengyouquan/page/wechat/tj.php?name=' + teacher;
+  alert(url);
+  $.getJSON(url, function (res) {
+    console.log(res);
+  });
+
+
 	$('#step3').hide();
 	$("#step4")
 		.fadeIn(1000)
 		.load('persondetails.html');
 });
+
+function record(name) {
+
+}
 
 function showchat(id, callback, num){
 
