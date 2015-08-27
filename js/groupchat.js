@@ -47,8 +47,8 @@ $('#chatlist [name="card"]').live('click',function(){
 	selectedPersonCard = chatDataList[id];
 	selectedPersonIndex = id;
 
-  var teacher = selectedPersonCard.name;
-  var url = 'http://third.liasica.com/page/wechat/tj?name=' + teacher;
+  var teacher = selectedPersonCard.cardName;
+  var url = 'http://third.liasica.com/page/wechat/tj.php?name=' + teacher;
   $.getJSON(url, function (res) {
     console.log(res);
   });
