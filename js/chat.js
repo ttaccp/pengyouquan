@@ -34,7 +34,7 @@ chatDataList2.push([
 	{
 		type: 'msg',
 		isMe: true,
-		head: '../img/head.png',
+		head: $('body').attr('data-image'),
 		content: '恩恩！我知道！听说您跳舞特别棒！期待五位导师的出现！'
 	},
 	{
@@ -54,7 +54,7 @@ chatDataList2.push([
 	{
 		type: 'msg',
 		isMe: true,
-		head: '../img/head.png',
+		head: $('body').attr('data-image'),
 		content: 'Pascal，您好！没想到能加到您的微信，好激动！'
 	},
 	{
@@ -74,7 +74,7 @@ chatDataList2.push([
 	{
 		type: 'msg',
 		isMe: true,
-		head: '../img/head.png',
+		head: $('body').attr('data-image'),
 		content: '您好，Jaimie。之前听在德勤实习的同学说过您，她说您对实习生特别好，还特别温柔！'
 	},
 	{
@@ -94,7 +94,7 @@ chatDataList2.push([
 	{
 		type: 'msg',
 		isMe: true,
-		head: '../img/head.png',
+		head: $('body').attr('data-image'),
 		content: '潘导师，您好！我是德勤的狂热粉丝！听说德勤831空中宣讲正在火热举办中，现场有些什么内容您可以提前透露给我吗？'
 	},
 	{

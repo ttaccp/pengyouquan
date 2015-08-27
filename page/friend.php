@@ -11,8 +11,18 @@ include 'helper/phpqrcode.php';
 $jssdk       = new JSSDK("wxb6b25160f0aacad7", "6fff7fda51bea8c8d1bbf0c89b805f17");
 $signPackage = $jssdk->GetSignPackage();
 $wechat      = new WechatHelper();
-$code        = $_GET['code'];
-$userInfo    = $wechat->getInfo($code);
+$userInfo    = null;
+if (isset($_GET['code']))
+{
+  $code     = $_GET['code'];
+  $userInfo = $wechat->getInfo($code);
+}
+if (isset($_GET['openid']))
+{
+  $openid   = $_GET['openid'];
+  $userInfo = file_get_contents('openids/' . $openid . '.json');
+  $userInfo = json_decode($userInfo);
+}
 if ($userInfo->openid == null)
 {
   header('Location: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect');
@@ -39,7 +49,6 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   <link rel="stylesheet" type="text/css" href="../css/liasica.css"/>
   <script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
   <script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/friend.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
@@ -518,6 +527,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   <div class="effect3"></div>
 </div>
 
+<script src="../js/friend.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   var userInfo = {
     name: '<?php echo $userInfo->nickname; ?>'

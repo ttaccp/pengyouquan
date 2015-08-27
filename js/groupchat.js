@@ -16,22 +16,22 @@ $('#input').click(function(){
 });
 
 $('#input2').click(function(){
-	
+
 	$('#step3 .clickTip').hide();
-	
+
 	$(this).hide();
 	$('#input')
 		.fadeIn(500)
 		.unbind('click');
-	
+
 	$('#chatlist')
 		.append(['<div class="msgline me">',
-			'<img src="../img/head.png" class="head" />',
+			'<img src="' + $('body').attr('data-image') + '" class="head" />',
 			'<div class="msgcontent">我知道他们！他们可是很厉害的人物！好想认识他们！</div>',
 		'</div>'].join(''));
-		
-	
-	showchat('#chatlist .msgline:last-child', addchat);	
+
+
+	showchat('#chatlist .msgline:last-child', addchat);
 });
 
 var selectedPersonCard = null;
@@ -39,10 +39,10 @@ var selectedPersonIndex = null;
 $('#chatlist [name="card"]').live('click',function(){
 	var self = $(this),
 		id = self.attr('_index');
-		
+
 	selectedPersonCard = chatDataList[id];
 	selectedPersonIndex = id;
-	
+
 	$('#step3').hide();
 	$("#step4")
 		.fadeIn(1000)
@@ -50,7 +50,7 @@ $('#chatlist [name="card"]').live('click',function(){
 });
 
 function showchat(id, callback, num){
-	
+
 	setTimeout(function(){
 		var send_music = new Audio();
 		send_music.src = '../audio/send.mp3';
@@ -60,7 +60,7 @@ function showchat(id, callback, num){
 			setTimeout(callback, num || 3000);
 		}
 	}, 50);
-	
+
 	if(callback){
 		$(document).scrollTop(99999);
 	}
@@ -114,7 +114,7 @@ chatDataList.push({
 });
 var addchatIndex = 0;
 function addchat(){
-	
+
 	if(chatDataList.length > addchatIndex){
 		var data = chatDataList[addchatIndex];
 		if(data.type == 'msg'){
@@ -139,8 +139,8 @@ function addchat(){
 				'</div>'].join(''));
 			showchat('#chatlist .msgline:last-child', addchat, 1500);
 		}
-		
+
 		addchatIndex++
-		
+
 	}
 }
