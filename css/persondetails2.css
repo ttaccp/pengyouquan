@@ -38,6 +38,9 @@ html, body{
 	vertical-align: middle;
 	margin: -0.04rem 0 0 0.05rem;
 }
+.person dd .name i.woman{
+	background-image: url(../img/people1.png);
+}
 .person dd .nickname{
 	margin-top: 0.15rem;
 }

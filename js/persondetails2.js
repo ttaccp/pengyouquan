@@ -11,7 +11,8 @@ personData.push({
 		'../img/pic11.png',
 		'../img/pic12.png',
 		'../img/pic13.png'
-	]
+	],
+	woman: true
 });
 
 // 1
@@ -53,7 +54,8 @@ personData.push({
 	picList: [
 		'../img/pic18.png',
 		'../img/pic19.png'
-	]
+	],
+	woman: true
 });
 
 // 4
@@ -81,7 +83,8 @@ personData.push({
 		'../img/pic1.png',
 		'../img/pic2.png',
 		'../img/pic3.png'
-	]
+	],
+	woman: true
 });
 
 // 6
@@ -119,7 +122,7 @@ setInfo(personData[index]);
 
 function setInfo(data){
 	$('#p_head').prop('src', data.head);
-	$('#p_name').html(data.name + '<i></i>');
+	$('#p_name').html(data.name + (data.woman ? '<i class="woman"></i>': '<i></i>'));
 	$('#p_nickname').html('昵称：' + data.nickName);
 	$('#p_tag').html(data.tag);
 	$('#p_address').html(data.address);
