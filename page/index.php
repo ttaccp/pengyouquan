@@ -19,7 +19,7 @@ $userInfo = json_decode($userInfo);
 
   <link rel="prefetch" href="pwd.html"/>
   <link rel="prefetch" href="groupchat.html"/>
-  <link rel="prefetch" href="friend.php"/>
+  <link rel="prefetch" href="friend.php?openid=<?php echo $userInfo->openid; ?>"/>
   <link rel="prefetch" href="persondetails.html"/>
   <link rel="prefetch" href="chat.html"/>
   <link rel="prefetch" href="chatlist.html"/>
