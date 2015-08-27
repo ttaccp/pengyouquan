@@ -111,11 +111,11 @@ chatDataList2.push([
 	}
 ]);
 
+var send_music = new Audio();
+	send_music.src = '../audio/send.mp3';
 function showchat2(id, callback){
 	
 	setTimeout(function(){
-		var send_music = new Audio();
-		send_music.src = '../audio/send.mp3';
 		send_music.play();
 		$(id).addClass('show');
 		if(callback){
