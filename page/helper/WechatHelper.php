@@ -70,6 +70,34 @@ class WechatHelper
   }
 
   /**
+   * @param $name
+   *
+   * @return array
+   */
+  public function getTeacher($name)
+  {
+    $sql = 'SELECT * FROM dq_teacher WHERE teacher=\'' . $name . '\'';
+
+    return $this->fetchArrObj($sql);
+  }
+
+  public function clickTeacher($name)
+  {
+    $teacher = $this->getTeacher($name);
+    if (count($teacher) < 1)
+    {
+      $sql = 'INSERT INTO dq_teacher (teacher, times) VALUES (\'' . $name . '\', ' . 1 . ')';
+    }
+    else
+    {
+      $times = $teacher[0]->times;
+      $times += 1;
+      $sql = 'UPDATE dq_teacher SET times=' . $times . ' WHERE teacher=\'' . $name . '\'';
+    }
+    return $this->Insert($sql);
+  }
+
+  /**
    * 返回状态
    *
    * @param $openid
