@@ -14,9 +14,9 @@ $userInfo = $wechat->getInfo($code);
 file_put_contents($dir . $userInfo->openid, json_encode($userInfo));
 $from_openid = $_GET['from_openid'];
 $to_openid   = $userInfo->openid;
-if ($from_openid != null)
+if ($to_openid != null)
 {
-  if ($to_openid != null)
+  if ($from_openid != null)
   {
     // 插入数据
     //$url   = '../friend.php?openid=' . $userInfo->openid;
