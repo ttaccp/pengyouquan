@@ -427,7 +427,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 <div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
 
 <div>
-  <?php if(!$status): ?>
+  <?php if(!$status): var_dump($status); exit(); ?>
     <input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
   <?php else: ?>
     <input type="button" value="点击分享并预约" class="share-btn" onclick="MyVideo.show();"/>
