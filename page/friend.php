@@ -15,7 +15,7 @@ $code        = $_GET['code'];
 $userInfo    = $wechat->getInfo($code);
 if ($userInfo->openid == null)
 {
-  header('Location: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Fdebug&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect');
+  header('Location: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect');
   exit('链接失效，请重新打开链接（请勿刷新此页）！');
 }
 $status = $wechat->getStatusByOpenid($userInfo->openid);
