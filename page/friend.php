@@ -19,6 +19,8 @@ if ($userInfo->openid == null)
   exit('链接失效，请重新打开链接（请勿刷新此页）！');
 }
 $status = $wechat->getStatusByOpenid($userInfo->openid);
+var_dump($status);
+die();
 ?>
 <!doctype html>
 <html lang="en">
