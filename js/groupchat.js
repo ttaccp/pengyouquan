@@ -121,7 +121,8 @@ chatDataList.push({
 	name: 'c同学',
 	cardHead: '../img/head1.png',
 	cardName: '梁捷',
-	cardNickName: '税务部门合伙人'
+	cardNickName: '税务部门合伙人',
+	woman: true
 });
 chatDataList.push({
 	type: 'card',
@@ -137,7 +138,8 @@ chatDataList.push({
 	name: 'c同学',
 	cardHead: '../img/head11.png',
 	cardName: 'Jaimie',
-	cardNickName: '财务咨询服务部门总监'
+	cardNickName: '财务咨询服务部门总监',
+	woman: true
 });
 chatDataList.push({
 	type: 'card',
