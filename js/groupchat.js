@@ -36,12 +36,32 @@ $('#input2').click(function(){
 
 var selectedPersonCard = null;
 var selectedPersonIndex = null;
-$('#chatlist [name="card"]').live('click',function(){
+//$('#chatlist [name="card"]').live('click',function(){
+//
+//// 记录
+//
+//alert(1)
+//	var self = $(this),
+//		id = self.attr('_index');
+//
+//	selectedPersonCard = chatDataList[id];
+//	selectedPersonIndex = id;
+//
+//var teacher = selectedPersonCard.cardName;
+//var url = 'http://third.liasica.com/pengyouquan/page/wechat/tj.php?name=' + teacher;
+//$.getJSON(url, function (res) {
+//  console.log(res);
+//});
+//
+//
+//	$('#step3').hide();
+//	$("#step4")
+//		.fadeIn(1000)
+//		.load('persondetails.html');
+//});
 
-  // 记录
-
-
-	var self = $(this),
+function cardclick(me){
+	var self = $(me),
 		id = self.attr('_index');
 
 	selectedPersonCard = chatDataList[id];
@@ -58,7 +78,7 @@ $('#chatlist [name="card"]').live('click',function(){
 	$("#step4")
 		.fadeIn(1000)
 		.load('persondetails.html');
-});
+}
 
 function record(name) {
 
@@ -145,12 +165,12 @@ function addchat(){
 				.append(['<div class="msgline">',
 					'<img src="', data.head,'" class="head" />',
 					'<div class="name">', data.name,'</div>',
-					'<div class="msgcontent" name="card" _index="', addchatIndex,'">',
+					'<div class="msgcontent" name="card" onclick="cardclick(this)" _index="', addchatIndex,'">',
 						'<div class="tl">名片</div>',
 						'<img src="', data.cardHead,'" class="c_head" />',
 						'<div class="c_name">', data.cardName,'</div>',
 						'<div class="c_nick">', data.cardNickName,'</div>',
-					,'</div>',
+					'</div>',
 				'</div>'].join(''));
 			showchat('#chatlist .msgline:last-child', addchat, 1500);
 		}
