@@ -47,6 +47,7 @@ html, body{
 }
 .step3 .chatlist .msgline.me{
 	padding-right: 0.65rem;
+	padding-left: 0.4rem;
 }
 .step3 .chatlist .msgline .head{
 	width: 0.4rem;
@@ -123,6 +124,7 @@ html, body{
 	margin-left: 0.6rem;
 	margin-top: 0.12rem;
 	color: #7f7f7f;
+    margin-bottom: 0.05rem;
 }
 /*.tapTip{
 	position: absolute;
