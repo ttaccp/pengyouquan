@@ -529,8 +529,6 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   <div class="effect3"></div>
 </div>
 
-<a href="friend.php" id="shareUrl"></a>
-
 <script src="../js/friend.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   var userInfo = {
@@ -567,7 +565,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
     var shareData = {
       title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
       desc: '德勤内部闹翻天啦~还不快来看看！',
-      link: $('#shareUrl').attr('href'),
+      link: location.href,
       //    imgUrl: 'imgurl',
       success: function () {
         location.href = 'http://deloitte.careerfrog.com.cn';
