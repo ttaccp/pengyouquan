@@ -119,7 +119,7 @@ function showchat2(id, callback){
 		send_music.play();
 		$(id).addClass('show');
 		if(callback){
-			setTimeout(callback, 3000);
+			setTimeout(callback, 2000);
 		}
 	}, 50);
 	
