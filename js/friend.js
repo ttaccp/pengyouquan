@@ -69,9 +69,10 @@ $('.img-list .img').click(function () {
     imglist = [];
 
   img.each(function () {
-    imglist.push($(this).attr('_src'));
+    imglist.push(location.host + '/pengyouquan/' + $(this).attr('_src').substr(3));
   });
 
+console.log(imglist)
   wx.previewImage({
     current: src, // 当前显示图片的http链接
     urls: imglist // 需要预览的图片http链接列表
