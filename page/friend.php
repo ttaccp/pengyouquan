@@ -150,7 +150,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 				</div>
 			</div>
 			<div class="comment-praise-box">
-				<div class="praise-box" id="praisebox3">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence Zizi , Jaimie</div>
+				<div class="praise-box" id="praisebox3">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence， Zizi , Jaimie</div>
 				<div class="comment-box" id="commentbox3">
 					<div class="comment-line">
 						<span class="s">Jaimie：</span>Pascal好帅
@@ -188,7 +188,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 				</div>
 			</div>
 			<div class="comment-praise-box">
-				<div class="praise-box" id="praisebox4">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence Zizi , Jaimie</div>
+				<div class="praise-box" id="praisebox4">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence , Zizi , Jaimie</div>
 				<div class="comment-box" id="commentbox4">
 					<div class="comment-line">
 						<span class="s">HR姐姐：</span>辛苦啦
@@ -231,7 +231,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 				</div>
 			</div>
 			<div class="comment-praise-box">
-				<div class="praise-box" id="praisebox5">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence Zizi , Jaimie</div>
+				<div class="praise-box" id="praisebox5">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence , Zizi , Jaimie</div>
 				<div class="comment-box" id="commentbox5">
 					<div class="comment-line">
 						<span class="s">梁捷：</span>Everyone can make an impact at Deloitte，同祝在线宣讲大成功！！！
@@ -346,7 +346,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 				</div>
 			</div>
 			<div class="comment-praise-box">
-				<div class="praise-box" id="praisebox8">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence Zizi , Jaimie</div>
+				<div class="praise-box" id="praisebox8">梁捷 , 潘青 , Pascal , MC , HR姐姐 , Terrence , Zizi , Jaimie</div>
 				<div class="comment-box" id="commentbox8">
 					
 				</div>
