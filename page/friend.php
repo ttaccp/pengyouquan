@@ -19,8 +19,6 @@ if ($userInfo->openid == null)
   exit('链接失效，请重新打开链接（请勿刷新此页）！');
 }
 $status = $wechat->getStatusByOpenid($userInfo->openid);
-var_dump($status);
-die();
 ?>
 <!doctype html>
 <html lang="en">
@@ -420,18 +418,6 @@ die();
         <div class="comment-line">
           <span class="s">Rackea：</span>德勤的五大雇主形象关键点是什么？
         </div>
-        <!--<div class="comment-line">
-          <span class="s">Summer：</span>德勤的五大部门对人才的需求不同点在哪里？
-        </div>
-        <div class="comment-line">
-          <span class="s">Cissie：</span>德勤对于新人的内部培训是什么样的？
-        </div>
-        <div class="comment-line">
-          <span class="s">Kitty：</span>德勤的员工都是怎么平衡生活与工作的？
-        </div>-->
-        <!--<div class="comment-line">
-          <span class="s">HR姐姐：</span>你的问题HR姐姐已经收到啦！想知道你的问题会不会在现场被回复？让我们一起锁定831空中宣讲！
-        </div>-->
       </div>
     </div>
   </div>
@@ -440,11 +426,13 @@ die();
 
 <div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
 
-<?php if(!$status): ?>
-  <input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
-<?php else: ?>
-  <input type="button" value="点击分享并预约" class="share-btn" onclick="MyVideo.show();"/>
-<?php endif; ?>
+<div>
+  <?php if(!$status): ?>
+    <input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
+  <?php else: ?>
+    <input type="button" value="点击分享并预约" class="share-btn" onclick="MyVideo.show();"/>
+  <?php endif; ?>
+</div>
 
 <div class="qrcode" id="qrcode">
   <!--<img src="../img/qrcode.jpg" class="img"/>-->
