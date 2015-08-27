@@ -64,7 +64,7 @@ $('.comment-line input.txt').live('blur', function () {
 // 预览图片
 $('.img-list .img').click(function () {
   var self = $(this),
-    src = self.attr('src'),
+    src = self.attr('_src'),
     img = self.parent('.img-list').find('.img'),
     imglist = [];
 
