@@ -1,17 +1,18 @@
 <?php
-
 /**
  * Author: liasica
  * CreateTime: 15/8/26 下午8:24
  * Filename: WechatHelper.php
  * PhpStorm: pengyouquan
  */
+require_once __DIR__ . '/Config.php';
+
 class WechatHelper
 {
-  private $db = 'deqin';
-  private $host = '127.0.0.1';
-  private $username = 'root';
-  private $password = 'jiemi@2015.';
+  private $db;
+  private $host;
+  private $username;
+  private $password;
   private $conn;
   private $appId = 'wxb6b25160f0aacad7';
   private $appSecret = '6fff7fda51bea8c8d1bbf0c89b805f17';
@@ -19,7 +20,12 @@ class WechatHelper
 
   public function __construct()
   {
-    $this->conn = mysqli_init();
+    $config         = new Config();
+    $this->db       = $config->db;
+    $this->username = $config->username;
+    $this->password = $config->password;
+    $this->host     = $config->host;
+    $this->conn     = mysqli_init();
     if (!$this->conn)
     {
       die('连接数据库初始化失败');
