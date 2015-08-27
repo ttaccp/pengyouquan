@@ -29,8 +29,11 @@ $('[name="praise"]').click(function () {
 
 });
 
-$('#clickTip').click(function () {
-  $('#clickTipBtn').click();
+$('#clickTip').click(function(){
+	$('#clickTipBtn').click();
+});
+$('#clickTip1').click(function(){
+	$('#clickTipBtn1').click();
 });
 
 // 评论
