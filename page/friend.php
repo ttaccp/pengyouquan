@@ -540,7 +540,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
       link: location.href,
       imgUrl: 'imgurl',
       success: function () {
-        location.href = 'deloitte.careerfrog.com.cn';
+        location.href = 'http://deloitte.careerfrog.com.cn';
       }
     };
 
