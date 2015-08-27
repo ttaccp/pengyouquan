@@ -437,7 +437,12 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 </div>
 
 <div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
-<input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
+
+<?php if(!$status): ?>
+  <input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
+<?php else: ?>
+  <input type="button" value="点击分享并预约" class="share-btn" onclick="MyVideo.show();"/>
+<?php endif; ?>
 
 <div class="qrcode" id="qrcode">
   <!--<img src="../img/qrcode.jpg" class="img"/>-->
@@ -461,7 +466,6 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   </div>
   <?php if (!$status): ?>
     <script type="text/javascript">
-      alert('<?php echo $status; ?>');
       // 长轮询
       function longpolling() {
         $.ajax({
