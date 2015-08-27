@@ -418,7 +418,13 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
     </div>
     <div class="time-box">
       <span class="time">30分钟前</span>
-      <i class="more-btn" name="moreBtn" id="clickTipBtn1"></i>
+      <i class="more-btn" name="moreBtn" id="clickTipBtn1">
+      	<div class="clickTip clickTip2" id="clickTip1">
+		  <div class="effect1"></div>
+		  <div class="effect2"></div>
+		  <div class="effect3"></div>
+		</div>
+      </i>
 
       <div class="menu-box">
         <div class="menu">
@@ -523,11 +529,6 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   <div class="effect3"></div>
 </div>
 
-<div class="clickTip clickTip2" id="clickTip1">
-  <div class="effect1"></div>
-  <div class="effect2"></div>
-  <div class="effect3"></div>
-</div>
 
 <!-- 微信分享相关 -->
 <script type="text/javascript" charset="utf-8" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
