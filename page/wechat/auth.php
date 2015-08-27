@@ -15,7 +15,7 @@ if ($from_openid != null && $to_openid != null)
 {
   // 插入数据
   //$url   = '../friend.php?openid=' . $userInfo->openid;
-  $url   = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Fdebug&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+  $url   = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
   $check = $wechat->getStatusByOpenid($userInfo->openid);
   if ($check)
   {
