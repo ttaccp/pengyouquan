@@ -512,7 +512,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
       title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
       desc: '德勤内部闹翻天啦~还不快来看看！',
       link: location.href,
-      imgUrl: 'imgurl',
+//    imgUrl: 'imgurl',
       success: function () {
         location.href = 'http://deloitte.careerfrog.com.cn';
       }
