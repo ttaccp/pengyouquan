@@ -292,4 +292,5 @@ body{
     position: absolute;
     right: 14px;
     top: 0;
+    z-index: 20;
 }
