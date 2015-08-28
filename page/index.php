@@ -1,12 +1,4 @@
-<?php
-//!isset($_GET['openid']) && header('Location: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Findex&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect');
-$openid   = $_GET['openid'];
-$userInfo = file_get_contents('openids/' . $openid . '.json');
-$userInfo = json_decode($userInfo);
-require_once "jssdk/jssdk.php";
-$jssdk       = new JSSDK("wxb6b25160f0aacad7", "6fff7fda51bea8c8d1bbf0c89b805f17");
-$signPackage = $jssdk->GetSignPackage();
-?>
+
 <!doctype html>
 <html lang="en">
 <head>

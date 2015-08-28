@@ -12,3 +12,9 @@ $('#personBtn').click(function(){
 		.fadeIn(1000)
 		.load('chat.html');
 });
+
+$('#backArea').click(function(){
+
+	$('#step4').hide();
+	$("#step3").show();
+});
