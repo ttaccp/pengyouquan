@@ -92,7 +92,7 @@ function showchat(id, callback, num){
 		send_music.play();
 		$(id).addClass('show');
 		if(callback){
-			setTimeout(callback, num || 3000);
+			setTimeout(callback, num || 1000);
 		}
 	}, 50);
 
