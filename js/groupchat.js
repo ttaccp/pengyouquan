@@ -174,7 +174,7 @@ function addchat(){
 						'<div class="c_nick">', data.cardNickName,'</div>',
 					'</div>',
 				'</div>'].join(''));
-			showchat('#chatlist .msgline:last-child', addchat, 1500);
+			showchat('#chatlist .msgline:last-child', addchat, 50);
 		}
 
 		addchatIndex++
