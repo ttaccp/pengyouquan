@@ -43,6 +43,7 @@ class WechatHelper
       @chown($this->file, 'apache:apache');
       @chmod($this->file, 777);
     }
+    $this->conn->set_charset('utf8');
   }
 
   /**
@@ -94,6 +95,20 @@ class WechatHelper
       $times += 1;
       $sql = 'UPDATE dq_teacher SET times=' . $times . ' WHERE teacher=\'' . $name . '\'';
     }
+
+    return $this->Insert($sql);
+  }
+
+  /**
+   * @param $name
+   * @param $msg
+   *
+   * @return bool|\mysqli_result
+   */
+  public function saveComment($name, $msg)
+  {
+    $sql = sprintf('INSERT INTO dq_msg (name, msg, created) VALUES (%s, %s, %s)', $name, $msg, time());
+
     return $this->Insert($sql);
   }
 

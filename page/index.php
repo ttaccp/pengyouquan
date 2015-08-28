@@ -26,6 +26,16 @@ $userInfo = json_decode($userInfo);
   <link rel="prefetch" href="pyq.html"/>
   <link rel="prefetch" href="../audio/lock.mp3"/>
   <link rel="prefetch" href="../audio/send.mp3"/>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?63386f0fbb423fad495b2819635588b0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 </head>
 <body data-image="<?php echo $userInfo->headimgurl ?>" data-nickname="<?php echo $userInfo->nickname ?>" data-openid="<?php echo $userInfo->openid; ?>">
 
