@@ -147,7 +147,7 @@ chatDataList.push({
 	name: 'c同学',
 	cardHead: '../img/head2.png',
 	cardName: '潘青',
-	cardNickName: '德勤审计合伙人'
+	cardNickName: '审计部门合伙人'
 });
 var addchatIndex = 0;
 function addchat(){

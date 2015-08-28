@@ -548,6 +548,13 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   var userInfo = {
     name: '<?php echo $userInfo->nickname; ?>'
   }
+  function saveComment(text){
+		// post text
+		var url = 'http://third.liasica.com/pengyouquan/page/wechat/comment?php';
+	  $.get(url, {name: userInfo.name, msg: text}, function (res) {
+	    console.log(res);
+	  });
+	}
 </script>
 
 
@@ -578,7 +585,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
       title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
       desc: '德勤内部闹翻天啦~还不快来看看！',
       link: "http://third.liasica.com/pengyouquan/page",
-      //    imgUrl: 'imgurl',
+    imgUrl: 'http://third.liasica.com/pengyouquan/img/shareimg.png',
       success: function () {
         location.href = 'http://deloitte.careerfrog.com.cn';
       }
