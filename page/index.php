@@ -3,6 +3,9 @@
 $openid   = $_GET['openid'];
 $userInfo = file_get_contents('openids/' . $openid . '.json');
 $userInfo = json_decode($userInfo);
+require_once "jssdk/jssdk.php";
+$jssdk       = new JSSDK("wxb6b25160f0aacad7", "6fff7fda51bea8c8d1bbf0c89b805f17");
+$signPackage = $jssdk->GetSignPackage();
 ?>
 <!doctype html>
 <html lang="en">
@@ -101,7 +104,7 @@ $userInfo = json_decode($userInfo);
       title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
       desc: '德勤内部闹翻天啦~还不快来看看！',
       link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Findex&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
-    imgUrl: 'http://third.liasica.com/pengyouquan/img/shareimg.png',
+      imgUrl: 'http://third.liasica.com/pengyouquan/img/shareimg.png',
       success: function () {
         location.href = 'http://deloitte.careerfrog.com.cn';
       }
