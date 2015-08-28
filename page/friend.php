@@ -470,7 +470,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 
 <div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
 <br />
-<div class="tip-txt" style="text-align: center;">宣讲预报名地址：deloitte.careerfrog.com.cn</div>
+<div class="tip-txt">空中宣讲直播地址：deloitte.careerfrog.com.cn</div>
 
 <input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
 
