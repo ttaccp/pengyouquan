@@ -44,7 +44,7 @@ $signPackage = $jssdk->GetSignPackage();
 <body data-image="<?php echo $userInfo->headimgurl ?>" data-nickname="<?php echo $userInfo->nickname ?>" data-openid="<?php echo $userInfo->openid; ?>">
 
 <div id="step1" class="step1">
-  <div class="time">08 : 31</div>
+  <div class="time">&nbsp;&nbsp;&nbsp;</div>
   <div class="date">8月28日&nbsp;&nbsp;&nbsp;&nbsp;星期五</div>
 
   <div class="msglist" id="msglist">

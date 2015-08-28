@@ -9,6 +9,9 @@ body{
 	font-size: 0.6rem;
 	text-align: center;
 	margin-top: 0.25rem;
+	background: url(../img/time.png) no-repeat center;
+	background-size: 1.39rem 0.41rem;
+	min-height: 1em;
 }
 .step1 .date{
 	font-size: 0.2rem;

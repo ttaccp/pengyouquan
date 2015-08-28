@@ -44,13 +44,13 @@
 	border: 1px solid #474749;
 }
 .step2 .numlist .num .s1{
-	font-size: 0.3rem;
+	font-size: 0.35rem;
 }
 .step2 .numlist .num .s1.o{
 	margin-top: 0.1rem;
 }
 .step2 .numlist .num .s2{
-	font-size: 0.12rem;
+	font-size: 0.10rem;
 }
 .textbox{
 	overflow: hidden;

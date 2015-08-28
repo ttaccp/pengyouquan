@@ -88,7 +88,7 @@ chatDataList2.push([
     type: 'msg',
     head: '../img/head2.png',
     name: '潘青',
-    content: '同学，你好！我是潘青'
+    content: '同学，你好！我是潘青。'
   },
   {
     type: 'msg',

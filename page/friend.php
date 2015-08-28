@@ -185,9 +185,9 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
         <div class="comment-line">
           <span class="s">梁捷：</span>帅
         </div>
-        <div class="comment-line">
+        <!--<div class="comment-line">
           <span class="s">HR姐姐：</span>小萌神，好可爱
-        </div>
+        </div>-->
         <div class="comment-line">
           <span class="s">潘青：</span>能力的边界就是职责的边界，讲的好
         </div>
@@ -201,7 +201,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
     </a>
 
     <div class="name">MC</div>
-    <div class="content">晚上10点才录制结束，伤不起 但是，状态很好，拍得很棒，很欣慰，期待效果。</div>
+    <div class="content">晚上10点才录制结束，伤不起…… 但是，状态很好，拍得很棒，很欣慰，期待效果。</div>
     <div class="img-list one">
       <img src="../img/pic10.png" class="img" _src="../img/max_pic10.jpg"/>
     </div>
@@ -243,7 +243,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
     </a>
 
     <div class="name">HR姐姐</div>
-    <div class="content">持续三天的录制终于收工，撒花庆祝 梁老师女王范儿，潘老师稳重范儿，Pascal酷劲十足，Terrence耍帅依旧，Jaimie美美哒，MC小黑呦
+    <div class="content">持续三天的录制终于收工，撒花庆祝。 梁老师女王范儿，潘老师稳重范儿，Pascal酷劲十足，Terrence耍帅依旧，Jaimie美美哒，MC小黑呦
       ，我们大家都很敬业哟，希望8月31号在线宣讲大成功！！！
     </div>
     <div class="img-list">
@@ -469,6 +469,8 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 </div>
 
 <div class="tip-txt">朋友圈就看到这啦！想了解更多关于德勤大趴信息，锁定8月31日空中宣讲，快来预报名吧！</div>
+<br />
+<div class="tip-txt">宣讲预报名地址：<a href="http://deloitte.careerfrog.com.cn">deloitte.careerfrog.com.cn</a></div>
 <input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
 
 <div class="qrcode" id="qrcode">
