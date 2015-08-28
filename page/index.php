@@ -71,5 +71,47 @@ $userInfo = json_decode($userInfo);
   Msg.start();
   $("#step2").load('pwd.html');
 </script>
+
+<!-- 微信分享相关 -->
+<script type="text/javascript" charset="utf-8" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+
+  wx.config({
+    debug: false,
+    appId: '<?php echo $signPackage["appId"];?>',
+    timestamp: '<?php echo $signPackage["timestamp"];?>',
+    nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+    signature: '<?php echo $signPackage["signature"];?>',
+    jsApiList: [
+      'onMenuShareTimeline',
+      'onMenuShareAppMessage',
+      'onMenuShareQQ',
+      'onMenuShareWeibo',
+      'previewImage'
+    ]
+  });
+
+  wx.ready(function () {
+    setShareInfo();
+  });
+
+  // 设置分享信息
+  function setShareInfo() {
+    var shareData = {
+      title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
+      desc: '德勤内部闹翻天啦~还不快来看看！',
+      link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Findex&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+    imgUrl: 'http://third.liasica.com/pengyouquan/img/shareimg.png',
+      success: function () {
+        location.href = 'http://deloitte.careerfrog.com.cn';
+      }
+    };
+
+    wx.onMenuShareAppMessage(shareData);
+    wx.onMenuShareTimeline(shareData);
+    wx.onMenuShareQQ(shareData);
+    wx.onMenuShareWeibo(shareData);
+  }
+</script>
 </body>
 </html>
