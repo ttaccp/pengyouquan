@@ -552,7 +552,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   }
   function saveComment(text){
 		// post text
-		var url = 'http://third.liasica.com/pengyouquan/page/wechat/comment?php';
+		var url = 'http://third.liasica.com/pengyouquan/page/wechat/comment.php';
 	  $.get(url, {name: userInfo.name, msg: text}, function (res) {
 	    console.log(res);
 	  });

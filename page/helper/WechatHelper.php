@@ -107,7 +107,7 @@ class WechatHelper
    */
   public function saveComment($name, $msg)
   {
-    $sql = sprintf('INSERT INTO dq_msg (name, msg, created) VALUES (%s, %s, %s)', $name, $msg, time());
+    $sql = sprintf('INSERT INTO dq_msg (name, msg, created) VALUES (\'%s\', \'%s\', %s)', $name, $msg, time());
 
     return $this->Insert($sql);
   }
