@@ -585,7 +585,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
   function setShareInfo() {
     var shareData = {
       title: '德勤内部朋友圈大曝光 | 2016校园招聘精彩开幕！', //分享标题
-      desc: '德勤内部闹翻天啦~还不快来看看！',
+      desc: '今天，让你见识一个不一样的德勤~',
       link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Findex&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
     imgUrl: 'http://third.liasica.com/pengyouquan/img/shareimg.png',
       success: function () {
