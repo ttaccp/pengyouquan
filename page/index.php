@@ -30,11 +30,12 @@ $userInfo = json_decode($userInfo);
     var _hmt = _hmt || [];
     (function () {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?63386f0fbb423fad495b2819635588b0";
+      hm.src = "//hm.baidu.com/hm.js?82fbe69f6eddd78e1eb3f7382bb5f3d0";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
 
 </head>
 <body data-image="<?php echo $userInfo->headimgurl ?>" data-nickname="<?php echo $userInfo->nickname ?>" data-openid="<?php echo $userInfo->openid; ?>">
