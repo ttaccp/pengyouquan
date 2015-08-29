@@ -210,6 +210,10 @@ body{
 	padding: 0 0.2rem;
 	font-size: 0.13rem;
 }
+a{
+	text-decoration: none;
+}
+.share-btn1,
 .share-btn{
 	-webkit-appearance: none;
 	width: 2rem;
@@ -222,6 +226,9 @@ body{
 	font-size: 0.14rem;
 	display: block;
 	margin: 0.2rem auto 0;
+}
+.share-btn1{
+	background-color: #4a504c;
 }
 .qrcode{
 	position: fixed;

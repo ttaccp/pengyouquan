@@ -472,7 +472,11 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 <br />
 <div class="tip-txt">空中宣讲直播地址：deloitte.careerfrog.com.cn</div>
 
-<input type="button" value="点击分享并预约" class="share-btn" onclick="Share.show();"/>
+<input type="button" value="点击分享" class="share-btn" onclick="Share.show();"/>
+<a href="http://deloitte.careerfrog.com.cn/apply">
+	<input type="button" value="我要预约" class="share-btn1"/>
+</a>
+
 
 <div class="qrcode" id="qrcode">
   <!--<img src="../img/qrcode.jpg" class="img"/>-->
