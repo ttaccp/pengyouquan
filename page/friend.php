@@ -5,7 +5,7 @@
  * Filename: friend.php
  * PhpStorm: pengyouquan
  */
-require_once __DIR__ . "/../../jssdk/jssdk.php";
+require_once __DIR__ . "jssdk/jssdk.php";
 require_once "helper/WechatHelper.php";
 include 'helper/phpqrcode.php';
 $jssdk       = new JSSDK("wxc39cc201cd75c1b7", "6302805b8a508b37ae0b9784d6f79460");
