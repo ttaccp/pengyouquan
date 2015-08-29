@@ -8,7 +8,7 @@
 require_once __DIR__ . "/../../jssdk/jssdk.php";
 require_once "helper/WechatHelper.php";
 include 'helper/phpqrcode.php';
-$jssdk       = new JSSDK("wxa8d1e52bfa69233a", "6c36f389327e568992b8493f6886d81c");
+$jssdk       = new JSSDK("wxc39cc201cd75c1b7", "6302805b8a508b37ae0b9784d6f79460");
 $signPackage = $jssdk->GetSignPackage();
 $wechat      = new WechatHelper();
 $userInfo    = null;
