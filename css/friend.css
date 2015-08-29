@@ -7,12 +7,11 @@ body{
 	position: relative;
 }
 .head-box .bg-box{
-	height: 2.2rem;
 	overflow: hidden;
 }
 .head-box .bg-box .img{
 	width: 100%;
-	margin-top: -0.4rem;
+	display: block;
 }
 .head-box .user-info{
 	position: absolute;
