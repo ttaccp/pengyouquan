@@ -568,7 +568,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 <script type="text/javascript">
 
   wx.config({
-    debug: true,
+    debug: false,
     appId: '<?php echo $signPackage["appId"];?>',
     timestamp: '<?php echo $signPackage["timestamp"];?>',
     nonceStr: '<?php echo $signPackage["nonceStr"];?>',
