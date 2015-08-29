@@ -3,8 +3,8 @@
 $openid   = $_GET['openid'];
 $userInfo = file_get_contents('openids/' . $openid . '.json');
 $userInfo = json_decode($userInfo);
-require_once "jssdk/jssdk.php";
-$jssdk       = new JSSDK("wxb6b25160f0aacad7", "6fff7fda51bea8c8d1bbf0c89b805f17");
+require_once __DIR__ . "/../../jssdk/jssdk.php";
+$jssdk       = new JSSDK("wxc39cc201cd75c1b7", "6302805b8a508b37ae0b9784d6f79460");
 $signPackage = $jssdk->GetSignPackage();
 ?>
 <!doctype html>
