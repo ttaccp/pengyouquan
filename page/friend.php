@@ -473,8 +473,8 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
 <div class="tip-txt">空中宣讲直播地址：deloitte.careerfrog.com.cn</div>
 
 <input type="button" value="点击分享" class="share-btn" onclick="Share.show();"/>
-<a href="http://deloitte.careerfrog.com.cn/apply">
-	<input type="button" value="我要预约" class="share-btn1"/>
+<a href="http://deloitte.careerfrog.com.cn">
+	<input type="button" value="我要观看" class="share-btn1"/>
 </a>
 
 
@@ -594,7 +594,7 @@ $status = $wechat->getStatusByOpenid($userInfo->openid);
       link: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb6b25160f0aacad7&redirect_uri=http%3A%2F%2Fsite.hiall.com.cn%2Fliasicawechatredirect%2Fdq%2F%3Findex&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
     imgUrl: 'http://third.liasica.com/pengyouquan/img/shareimg.png',
       success: function () {
-        location.href = 'http://deloitte.careerfrog.com.cn/apply';
+        location.href = 'http://deloitte.careerfrog.com.cn';
       }
     };
 
